@@ -12,7 +12,7 @@
     <h3>Recommended Songs:</h3>
     <ul>
         {% for song in songs %}
-            <li>{{ song }}</li>
+            <li><a href="{{ song.url }}" target="_blank">{{ song.name }} by {{ song.artist }}</a></li>
         {% endfor %}
     </ul>
     <a href="/">Go Back</a>
