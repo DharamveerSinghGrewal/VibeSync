@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Recommender</title>
+    <title>Emotion-Based Music Recommender</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <h1>Emotion-Based Music Recommender</h1>
-    <form action="/results" method="POST" enctype="multipart/form-data">
-        <label for="image">Upload an image:</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="app">
+        <header class="header">
+            <h1 class="app-title">VibeSync</h1>
+            <p class="tagline">Let your emotions drive your music</p>
+        </header>
+        <main class="main-content">
+            <form action="/results" method="POST" enctype="multipart/form-data" class="upload-form">
+                <label for="image" class="upload-label">Upload an image to detect your vibe:</label>
+                <input type="file" id="image" name="image" accept="image/*" required class="upload-input">
+                <button type="submit" class="upload-btn">Find My Vibe</button>
+            </form>
+        </main>
+    </div>
 </body>
 </html>
+

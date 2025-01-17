@@ -1,20 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
+    <title>Your Vibe</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <h1>Emotion-Based Music Recommender</h1>
-    <h2>Detected Emotion: {{ emotion }}</h2>
-    <h3>Recommended Songs:</h3>
-    <ul>
-        {% for song in songs %}
-            <li><a href="{{ song.url }}" target="_blank">{{ song.name }} by {{ song.artist }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="/">Go Back</a>
+    <div class="app">
+        <header class="header">
+            <h1 class="app-title">Your Vibe</h1>
+            <p class="detected-emotion">Detected Emotion: <span>{{ emotion }}</span></p>
+        </header>
+        <main class="main-content">
+            <div class="song-grid">
+                {% for song in songs %}
+                    <div class="song-card">
+                        <iframe src="{{ song.embed_url }}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="/" class="back-btn">Go Back</a>
+        </main>
+    </div>
 </body>
 </html>
+
+

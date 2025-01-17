@@ -19,7 +19,7 @@ def get_songs_by_emotion(emotion):
     emotion_to_genre = {
         "joy": "happy",
         "sorrow": "sad",
-        "anger": "angry",
+        "anger": "metal",
         "surprise": "upbeat"
     }
 
@@ -33,7 +33,7 @@ def get_songs_by_emotion(emotion):
         song_info = {
             "name": track['name'],
             "artist": ', '.join(artist['name'] for artist in track['artists']),
-            "url": track['external_urls']['spotify']  # Spotify's shareable track link
+            "embed_url": f"https://open.spotify.com/embed/track/{track['id']}"  # Embed URL
         }
         songs.append(song_info)
 
