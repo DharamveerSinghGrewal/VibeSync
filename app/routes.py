@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request
 from werkzeug.utils import secure_filename
 import os
 from app.services.vision_service import detect_emotion
+from app.services.spotify_service import get_songs_by_emotion
 main = Blueprint('main', __name__)
 
 UPLOAD_FOLDER = "app/static/uploads/"
@@ -30,10 +31,9 @@ def results():
         emotions = detect_emotion(image_path)
         # Map the most prominent emotion
         detected_emotion = max(emotions, key=emotions.get).capitalize()
+        # Get songs from Spotify based on the detected emotion
+        recommended_songs = get_songs_by_emotion(detected_emotion)
     except Exception as e:
         return f"Error detecting emotion: {e}", 500
-
-    # Placeholder songs
-    recommended_songs = ["Song 1", "Song 2", "Song 3"]  # to be replaced later with Spotify integration
 
     return render_template('results.html', emotion=detected_emotion, songs=recommended_songs)
