@@ -10,6 +10,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @main.route('/')
 def home():
+    
     return render_template('index.html')
 
 @main.route('/results', methods=['POST'])
