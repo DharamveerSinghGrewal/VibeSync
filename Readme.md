@@ -2,8 +2,8 @@
 
 VibeSync is a full-stack web application that bridges technology and creativity by recommending songs based on emotions detected in user-uploaded images. This project leverages advanced APIs and modern web technologies to create a fun and engaging experience while demonstrating scalable and deployable solutions.
 
-Live Demo: [VibeSync](https://vibe-sync-1037638874998.northamerica-northeast2.run.app)
-
+---
+**Live Demo**(https://vibe-sync-1037638874998.northamerica-northeast2.run.app)
 ---
 
 ## 🌟 Features
